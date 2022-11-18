@@ -51,8 +51,8 @@ global $woocommerce;
 $product = wc_get_product( $product_id );
 
 
-$tag_slug = $product->get_attribute('marka-i-model');
-$attributes_terms = get_term_by('name', $tag_slug, 'pa_marka-i-model');
+$tag_slug = $product->get_attribute('brand-and-model');
+$attributes_terms = get_term_by('name', $tag_slug, 'pa_brand-and-model');
 $advantage = get_term_meta($attributes_terms->term_id, 'custom_taxonomy_advantage', true);
 $disadvantage = get_term_meta($attributes_terms->term_id, 'custom_taxonomy_disadvantage', true);
 
@@ -128,18 +128,18 @@ if(strlen($product_title) > 60){
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'ladowarki-wallbox',
+					  'terms'         => 'wallbox-charging-station',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-pl' ),
+					'terms'    => array( 'accessories-charging-cables' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_marka-i-model',
+					'taxonomy' => 'pa_brand-and-model',
 					'field'    => 'term_id',
 					'terms'    => array( $brandmodel ),
 					'operator' => 'IN',
@@ -167,18 +167,18 @@ if(strlen($product_title) > 60){
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'ladowarki-wallbox',
+					  'terms'         => 'wallbox-charging-station',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-pl' ),
+					'terms'    => array( 'accessories-charging-cables' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_marka-i-model',
+					'taxonomy' => 'pa_brand-and-model',
 					'field'    => 'term_id',
 					'terms'    => array( $brandmodel ),
 					'operator' => 'IN',
@@ -200,18 +200,18 @@ if(strlen($product_title) > 60){
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'ladowarki-wallbox',
+					  'terms'         => 'wallbox-charging-station',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-pl' ),
+					'terms'    => array( 'accessories-charging-cables' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_marka-i-model',
+					'taxonomy' => 'pa_brand-and-model',
 					'field'    => 'term_id',
 					'terms'    => array( $brandmodel ),
 					'operator' => 'IN',
@@ -234,14 +234,14 @@ if(strlen($product_title) > 60){
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'ladowarki-wallbox',
+					  'terms'         => 'wallbox-charging-station',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-pl' ),
+					'terms'    => array( 'accessories-charging-cables' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
@@ -267,14 +267,14 @@ if(strlen($product_title) > 60){
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'ladowarki-wallbox',
+					  'terms'         => 'wallbox-charging-station',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-pl' ),
+					'terms'    => array( 'accessories-charging-cables' ),
 					'operator' => 'NOT IN',
 				   ),array(
 					'taxonomy' => 'pa_power',
@@ -293,14 +293,14 @@ if(strlen($product_title) > 60){
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'ladowarki-wallbox',
+					  'terms'         => 'wallbox-charging-station',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-pl' ),
+					'terms'    => array( 'accessories-charging-cables' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
@@ -320,17 +320,17 @@ if(strlen($product_title) > 60){
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'ladowarki-wallbox',
+					  'terms'         => 'wallbox-charging-station',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-pl' ),
+					'terms'    => array( 'accessories-charging-cables' ),
 					'operator' => 'NOT IN',
 				   ),array(
-					'taxonomy' => 'pa_marka-i-model',
+					'taxonomy' => 'pa_brand-and-model',
 					'field'    => 'term_id',
 					'terms'    => array( $brandmodel ),
 					'operator' => 'IN',
@@ -346,14 +346,14 @@ if(strlen($product_title) > 60){
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'ladowarki-wallbox',
+					  'terms'         => 'wallbox-charging-station',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-pl' ),
+					'terms'    => array( 'accessories-charging-cables' ),
 					'operator' => 'NOT IN',
 				   )
 				)
@@ -390,7 +390,7 @@ if(strlen($product_title) > 60){
             //    $args['tax_query'] = array(
 			// 	'relation' => 'AND',
             //       array(
-            //             'taxonomy' => 'pa_marka-i-model',
+            //             'taxonomy' => 'pa_brand-and-model',
             //             'field'    => 'term_id',
             //             'terms'    => array( $brandmodel ),
             //             'operator' => 'IN',
@@ -405,7 +405,7 @@ if(strlen($product_title) > 60){
 				while ( $loop->have_posts() ) : $loop->the_post();
 				global $product;
 				$output .='<li>
-				<button class="multple_ajax" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_marka-i-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
+				<button class="multple_ajax" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_brand-and-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
 			 </li>';
 				endwhile;
 			} else {

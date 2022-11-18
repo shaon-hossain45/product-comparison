@@ -41,12 +41,12 @@ if ( ! class_exists( 'AdminBaseAttributesTaxonomy' ) ) {
 			
 			if ( is_admin() && isset( $_GET['taxonomy'], $_GET['post_type'] ) && $_GET['post_type'] === 'product' ) {
 				//$taxonomy_name = sanitize_text_field( $_GET['taxonomy'] );
-				$taxonomy_name = 'pa_marka-i-model';
+				$taxonomy_name = 'pa_brand-and-model';
 				add_action( $taxonomy_name.'_add_form_fields', array( $this, 'rudr_add_term_fields' ) );
 				add_action( $taxonomy_name.'_edit_form_fields', array( $this, 'rudr_edit_term_fields' ), 10, 2 );
 			}
 				//var_dump($taxonomy_name);
-				$taxonomy_name = 'pa_marka-i-model';
+				$taxonomy_name = 'pa_brand-and-model';
 				add_action( 'created_'.$taxonomy_name, array ( $this, 'rudr_save_term_fields' ), 10, 2 );
         		add_action( 'edited_'.$taxonomy_name, array ( $this, 'rudr_save_term_fields' ), 10, 2 );
 
