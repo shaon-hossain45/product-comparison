@@ -76,7 +76,7 @@ if(strlen($product_title) > 60){
          'product_image' => $product->get_image(),
 		 'product_url' => get_permalink( $product_id ),
          'communication' => $product->get_attribute('communication'),
-         'integrated_cable' => $product->get_attribute('integrated-cable'),
+         'integrated_cable' => $product->get_attribute('cable'),
          'POWER_MANAGEMENT' => "",
          'RFID' => $product->get_attribute('rfid'),
          'WARRANTY' => $product->get_attribute('warranty'),

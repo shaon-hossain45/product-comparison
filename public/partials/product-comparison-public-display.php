@@ -65,7 +65,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                
                $output .= '<select class="pa_brand-and-model">';
                
-               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array(933,966,960,963,), 'hide_empty' => false ) );
+               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array(888,865,878,874), 'hide_empty' => false ) );
                //var_dump($terms);
 
                $output .='<option value="">Brand & Model</option>';
