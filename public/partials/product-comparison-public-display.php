@@ -28,13 +28,25 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
 			add_shortcode( 'product_comparison', array( $this, 'template_shortcode' ) );
 
          //add_action( 'init', array( $this, 'product_attributes_filter' ) );
+
+         /* Front End */
+         add_action( 'wp_footer', array( $this, 'insert_html_in_header' ) );
          
 		}
 
 
 
+      public function insert_html_in_header() {
+         echo '<div class="f-btn cmpr-toggler" id="cmpr-btn"><i class="fa-solid fa-square-plus"></i><div class="label">Compare</div></div>';
+     }
+
+
+   /**
+	 * Audio update setting
+	 *
+	 * @return [type] [description]
+	 */
       public function product_attributes_filter(){
-      
       
       $attributes =  wc_get_attribute_taxonomies();
       //var_dump($attributes);

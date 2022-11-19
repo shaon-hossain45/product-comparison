@@ -88,4 +88,15 @@
         });
     });
 
+
+    $(function() {
+        $("#cmpr-btn").on("click", function(event) {
+            event.preventDefault();
+
+            var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+
+            window.location.href = newURL + '/compare/';
+        });
+    });
+
 })(jQuery, window, document);
