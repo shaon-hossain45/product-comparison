@@ -36,7 +36,7 @@ class Product_Comparison_Activator {
 
 		   $new_page_title    = 'Compare Wallbox Stations';
 		   $new_page_content  = '[product_comparison]';
-		   $new_page_template = 'Page - Full Width'; // ex. template-custom.php. Leave blank if you don't want a custom page template.
+		   $new_page_template = 'page-blank.php'; // ex. template-custom.php. Leave blank if you don't want a custom page template.
 
 		   // don't change the code bellow, unless you know what you're doing
 
