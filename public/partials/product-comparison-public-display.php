@@ -31,11 +31,15 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
 
          /* Front End */
          add_action( 'wp_footer', array( $this, 'insert_html_in_header' ) );
-         
 		}
 
+    
 
-
+      /**
+       * Audio update setting
+       *
+       * @return [type] [description]
+       */
       public function insert_html_in_header() {
          echo '<div class="f-btn cmpr-toggler" id="cmpr-btn"><i class="fa-solid fa-square-plus"></i><div class="label">Compare</div></div>';
      }
@@ -77,7 +81,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                
                $output .= '<select class="pa_brand-and-model">';
                
-               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array(888,865,878,874), 'hide_empty' => false ) );
+               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array(888,865,878,874,869,891,901,875,894,902,900,899,868,873,870), 'hide_empty' => false ) );
                //var_dump($terms);
 
                $output .='<option value="">Brand & Model</option>';
