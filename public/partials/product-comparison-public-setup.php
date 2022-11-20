@@ -45,30 +45,31 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 	// here we are verifying does this request is post back and have correct nonce
 	if ( isset( $_POST ) && wp_verify_nonce( $_POST['security'], 'product_comp_nonce' ) ) {
 
-// Get $product object from product ID
-$product_id = $_POST['value'];
-global $woocommerce;
-$product = wc_get_product( $product_id );
+		if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+            // Plugin is active
+            global $woocommerce;
+			// Get $product object from product ID
+			$product_id = $_POST['value'];
+			$product = wc_get_product( $product_id );
+
+			$tag_slug = $product->get_attribute('brand-and-model');
+			$attributes_terms = get_term_by('name', $tag_slug, 'pa_brand-and-model');
+			$advantage = get_term_meta($attributes_terms->term_id, 'custom_taxonomy_advantage', true);
+			$disadvantage = get_term_meta($attributes_terms->term_id, 'custom_taxonomy_disadvantage', true);
+
+			// var_dump($product->get_attribute('warranty'));
+
+				// // String to array
+				// parse_str( $_POST['value'], $itechArray );
+			$product_title = $product->get_name();
+			if(strlen($product_title) > 60){
+				$product_title = substr($product_title, 0, 50)."...";
+			}
 
 
-$tag_slug = $product->get_attribute('brand-and-model');
-$attributes_terms = get_term_by('name', $tag_slug, 'pa_brand-and-model');
-$advantage = get_term_meta($attributes_terms->term_id, 'custom_taxonomy_advantage', true);
-$disadvantage = get_term_meta($attributes_terms->term_id, 'custom_taxonomy_disadvantage', true);
 
-// var_dump($product->get_attribute('warranty'));
-
-	// // String to array
-	// parse_str( $_POST['value'], $itechArray );
-$product_title = $product->get_name();
-if(strlen($product_title) > 60){
-	$product_title = substr($product_title, 0, 50)."...";
-}
-
-
-
-	// // combine our default item with request params
-	// // Collect data from - form request array
+		// // combine our default item with request params
+		// // Collect data from - form request array
 		$items = array(
          'dataColumn' => $_POST['dataColumn'],
 		// 'ID'               => $itechArray['ID'],
@@ -96,16 +97,18 @@ if(strlen($product_title) > 60){
             'exists' => $items,
 			);
 			wp_send_json_success( $return_success );
+		}
 	}
 	}
-
 
 	public function filter_update_setting(){
 // this is default $item which will be used for new records
 
 	// here we are verifying does this request is post back and have correct nonce
 	if ( isset( $_POST ) && wp_verify_nonce( $_POST['security'], 'product_filter_nonce' ) ) {
-		
+		if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+            // Plugin is active
+            global $woocommerce;
 		// var_dump($product->get_attribute('warranty'));
 		
 			// // String to array
@@ -418,5 +421,6 @@ if(strlen($product_title) > 60){
 			}
 	}
 
+}
 }
 }

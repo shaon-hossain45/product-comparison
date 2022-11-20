@@ -25,15 +25,15 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
 	 */
 		public function __construct( ) {
 
+         if (!function_exists('is_plugin_active')) {
+            include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+         }
+         
 			add_shortcode( 'product_comparison', array( $this, 'template_shortcode' ) );
-
-         //add_action( 'init', array( $this, 'product_attributes_filter' ) );
 
          /* Front End */
          add_action( 'wp_footer', array( $this, 'insert_html_in_header' ) );
 		}
-
-    
 
       /**
        * Audio update setting
@@ -52,6 +52,11 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
 	 */
       public function product_attributes_filter(){
       
+         if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+            // Plugin is active
+            global $woocommerce;
+
+
       $attributes =  wc_get_attribute_taxonomies();
       //var_dump($attributes);
 
@@ -122,7 +127,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
          return $output;
 
       }
-
+   }
 
 
    /**
