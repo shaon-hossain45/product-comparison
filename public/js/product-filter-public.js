@@ -50,49 +50,49 @@
          * @type {Boolean}
          */
 
-        if (selectedConncetor != "" || selectedPower != "" || selectedBrandModel != "") {
-            /**
-             * Data passing to the server with ajax
-             * @param  {[type]}      [description]
-             * @return {[type]}      [description]
-             */
+        //if (selectedConncetor != "" || selectedPower != "" || selectedBrandModel != "") {
+        /**
+         * Data passing to the server with ajax
+         * @param  {[type]}      [description]
+         * @return {[type]}      [description]
+         */
 
-            var data = {
-                Conncetor: selectedConncetor,
-                Power: selectedPower,
-                BrandModel: selectedBrandModel,
-                action: pluginkpoo_obj.action,
-                security: pluginkpoo_obj.security
-            };
-
-            $.ajax({
-                type: "POST",
-                dataType: "html",
-                url: pluginkpoo_obj.ajax_url,
-                data: data,
-                beforeSend: function(xhr) {
-                    //form.find("button[type='button']").children("span.spinner-grow").removeClass("d-none");
-                },
-                success: function(data, status, xhr) {
-                    //console.log(data + status + xhr);
-                    if (status == "success") {
-                        //alert("ok done");
-
-                        //thisby.parent().find("ul.compare-product__sub-menu").html(data);
-
-                        thisby.closest(".compare-product__wrapper").find("ul.compare-product__sub-menu").html(data);
-                        thisby.closest(".compare-product__wrapper").find('.select-dropdown').removeClass("active");
-                        thisby.closest(".compare-product__wrapper").find('.compare-product__sub-menu').addClass("active");
-                        thisby.toggleClass("active");
-
-
-                    }
-                },
-                complete: function(xhr, textStatus) {
-                    //form.find("button[type='button']").children("span.spinner-grow").addClass("d-none");
-                }
-            });
+        var data = {
+            Conncetor: selectedConncetor,
+            Power: selectedPower,
+            BrandModel: selectedBrandModel,
+            action: pluginkpoo_obj.action,
+            security: pluginkpoo_obj.security
         };
+
+        $.ajax({
+            type: "POST",
+            dataType: "html",
+            url: pluginkpoo_obj.ajax_url,
+            data: data,
+            beforeSend: function(xhr) {
+                //form.find("button[type='button']").children("span.spinner-grow").removeClass("d-none");
+            },
+            success: function(data, status, xhr) {
+                //console.log(data + status + xhr);
+                if (status == "success") {
+                    //alert("ok done");
+
+                    //thisby.parent().find("ul.compare-product__sub-menu").html(data);
+
+                    thisby.closest(".compare-product__wrapper").find("ul.compare-product__sub-menu").html(data);
+                    thisby.closest(".compare-product__wrapper").find('.select-dropdown').removeClass("active");
+                    thisby.closest(".compare-product__wrapper").find('.compare-product__sub-menu').addClass("active");
+                    thisby.toggleClass("active");
+
+
+                }
+            },
+            complete: function(xhr, textStatus) {
+                //form.find("button[type='button']").children("span.spinner-grow").addClass("d-none");
+            }
+        });
+        //};
         // Stop form submission
         //return false;
     });

@@ -121,7 +121,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 			$connector = $_POST['Conncetor'];
 
 
-			if( !empty( $brandmodel ) && !empty( $power ) && !empty( $connector ) ){
+		if( !empty( $brandmodel ) && !empty( $power ) && !empty( $connector ) ){
 
 			$args = array(
 				'post_type' => 'product',

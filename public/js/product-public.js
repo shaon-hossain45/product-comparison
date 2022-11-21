@@ -80,12 +80,13 @@
                 event.stopPropagation();
             });
 
-            $("body").click(function() {
-                navdropdown.removeClass("active");
-                //$("button.filter-btn").removeClass("active");
-            });
+            // $("body").click(function() {
+            //     navdropdown.removeClass("active");
+            //     //$("button.filter-btn").removeClass("active");
+            // });
 
         });
+
     });
 
 
