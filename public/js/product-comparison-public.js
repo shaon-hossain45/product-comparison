@@ -97,7 +97,7 @@
                 success: function(response) {
                     //alert("ok done");
                     if (response["data"]["insert"] == "success") {
-                        $("ul.compare-product__sub-menu").removeClass('active');
+                        $('.compare__col.product-values.top-column-' + colno).find("ul.compare-product__sub-menu").removeClass('active');
                         //form.next(".itechscr-jk7").find(".itechscr-ivf").html(response["data"]["outputHtml"]);
 
                         $('.compare__col[data-colno=' + colno + ']').find(".compareImage").html(response["data"]["exists"]["product_image"]);

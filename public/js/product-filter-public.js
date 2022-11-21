@@ -82,7 +82,7 @@
 
                         thisby.closest(".compare-product__wrapper").find("ul.compare-product__sub-menu").html(data);
                         thisby.closest(".compare-product__wrapper").find('.select-dropdown').removeClass("active");
-                        thisby.closest(".compare-product__wrapper").find('.compare-product__sub-menu').toggleClass("active");
+                        thisby.closest(".compare-product__wrapper").find('.compare-product__sub-menu').addClass("active");
                         thisby.toggleClass("active");
 
 
