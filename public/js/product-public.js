@@ -94,7 +94,7 @@
         $("#cmpr-btn").on("click", function(event) {
             event.preventDefault();
 
-            var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname.split('/')[1];
+            var newURL = window.location.protocol + "//" + window.location.host;
             //console.log(newURL);
             window.location.href = newURL + '/shop/compare-wallbox-stations/';
         });
