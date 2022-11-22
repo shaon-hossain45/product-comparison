@@ -96,7 +96,7 @@
 
             var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
 
-            window.location.href = newURL + '/compare-wallbox-stations/';
+            window.location.href = newURL + '/shop/compare-wallbox-stations/';
         });
     });
 

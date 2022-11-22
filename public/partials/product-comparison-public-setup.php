@@ -158,7 +158,13 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'field'    => 'term_id',
 					'terms'    => array( $connector ),
 					'operator' => 'IN',
-					)
+				   ),
+				   array(
+					'taxonomy' => 'pa_brand-and-model',
+					'field'    => 'term_id',
+					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'operator' => 'NOT IN',
+				 )
 				)
 			);
 		}else if( !empty( $brandmodel ) && !empty( $connector ) ){
@@ -191,7 +197,13 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'field'    => 'term_id',
 					'terms'    => array( $connector ),
 					'operator' => 'IN',
-					)
+				   ),
+				   array(
+					'taxonomy' => 'pa_brand-and-model',
+					'field'    => 'term_id',
+					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'operator' => 'NOT IN',
+				 )
 				)
 			);
 		}else if( !empty( $brandmodel ) && !empty( $power ) ){
@@ -224,7 +236,13 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'field'    => 'term_id',
 					'terms'    => array( $power ),
 					'operator' => 'IN',
-				   )
+				   ),
+				   array(
+					'taxonomy' => 'pa_brand-and-model',
+					'field'    => 'term_id',
+					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'operator' => 'NOT IN',
+				 )
 				)
 			);
 		}else if( !empty( $power ) && !empty( $connector ) ){
@@ -258,7 +276,13 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'field'    => 'term_id',
 					'terms'    => array( $connector ),
 					'operator' => 'IN',
-					)
+				   ),
+				   array(
+					'taxonomy' => 'pa_brand-and-model',
+					'field'    => 'term_id',
+					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'operator' => 'NOT IN',
+				 )
 				)
 			);
 		}else if( !empty( $power ) ){
@@ -284,7 +308,13 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'field'    => 'term_id',
 					'terms'    => array( $power ),
 					'operator' => 'IN',
-				   )
+				   ),
+				   array(
+					'taxonomy' => 'pa_brand-and-model',
+					'field'    => 'term_id',
+					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'operator' => 'NOT IN',
+				 )
 				)
 			);
 		}else if( !empty( $connector ) ){
@@ -311,7 +341,13 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'field'    => 'term_id',
 					'terms'    => array( $connector ),
 					'operator' => 'IN',
-					)
+				   ),
+				   array(
+					'taxonomy' => 'pa_brand-and-model',
+					'field'    => 'term_id',
+					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'operator' => 'NOT IN',
+				 )
 				)
 			);
 		}else if( !empty( $brandmodel ) ){
@@ -337,7 +373,13 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'field'    => 'term_id',
 					'terms'    => array( $brandmodel ),
 					'operator' => 'IN',
-				   )
+				   ),
+				   array(
+					'taxonomy' => 'pa_brand-and-model',
+					'field'    => 'term_id',
+					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'operator' => 'NOT IN',
+				 )
 				)
 			);
 		}else{
@@ -358,35 +400,16 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'field'    => 'slug',
 					'terms'    => array( 'accessories-charging-cables' ),
 					'operator' => 'NOT IN',
-				   )
+				   ),
+				   array(
+					'taxonomy' => 'pa_brand-and-model',
+					'field'    => 'term_id',
+					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'operator' => 'NOT IN',
+				 )
 				)
 			);
-		}
-            // if(isset($_POST['Conncetor']) And ($_POST['Conncetor'] != '')){
-			// 	$connector = $_POST['Conncetor'];
-			// 	$args['tax_query'] = array(
-			// 		'relation' => 'AND',
-			// 		array(
-			// 				'taxonomy' => 'pa_connector',
-			// 				'field'    => 'term_id',
-			// 				'terms'    => array( $connector ),
-			// 				'operator' => 'IN',
-			// 			)
-			// 	);
-            // };
-
-			// if(isset($_POST['Power']) And ($_POST['Power'] != '')){
-			// 	$power = $_POST['Power'];
-			// 	$args['tax_query'] = array(
-			// 		'relation' => 'AND',
-			// 		array(
-			// 				'taxonomy' => 'pa_power',
-			// 				'field'    => 'term_id',
-			// 				'terms'    => array( $power ),
-			// 				'operator' => 'IN',
-			// 			)
-			// 	);
-            // };
+		};
 
 			// if(isset($_POST['BrandModel']) And ($_POST['BrandModel'] != '')){
 			// 	$brandmodel = $_POST['BrandModel'];

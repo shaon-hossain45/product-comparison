@@ -47,6 +47,7 @@ class Product_Comparison_Activator {
 			  'post_content' => $new_page_content,
 			  'post_status'  => 'publish',
 			  'post_author'  => 1,
+			  'post_parent'	=> self::get_id_by_slug('shop'),
 		   );
 		   if ( ! isset( $page_check->ID ) ) {
 			  $new_page_id = wp_insert_post( $new_page );
@@ -54,6 +55,34 @@ class Product_Comparison_Activator {
 				 update_post_meta( $new_page_id, '_wp_page_template', $new_page_template );
 			  }
 		   }
+		}
+	}
+
+
+	public static function get_id_by_slug($page_slug) {
+		$page_check = get_page_by_path($page_slug);
+		if ($page_check) {
+			return $page_check->ID;
+		} else {
+
+			$new_page_title    = 'Shop';
+		   	$new_page_content  = '';
+		   	$new_page_template = 'page-blank.php';
+
+			$new_page   = array(
+				'post_type'    => 'page',
+				'post_title'   => $new_page_title,
+				'post_content' => $new_page_content,
+				'post_status'  => 'publish',
+				'post_author'  => 1,
+			 );
+			 if ( ! isset( $page_check->ID ) ) {
+				$new_page_id = wp_insert_post( $new_page );
+				if ( ! empty( $new_page_template ) ) {
+				   update_post_meta( $new_page_id, '_wp_page_template', $new_page_template );
+				}
+				return $new_page_id;
+			 }
 		}
 	}
 

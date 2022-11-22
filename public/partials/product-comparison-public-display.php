@@ -86,7 +86,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                
                $output .= '<select class="pa_brand-and-model">';
                
-               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array(888,865,878,874,869,891,901,875,894,902,900,899,868,873,870), 'hide_empty' => false ) );
+               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ), 'hide_empty' => false ) );
                //var_dump($terms);
 
                $output .='<option value="">Brand & Model</option>';
@@ -190,7 +190,13 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                                    'field'    => 'slug',
                                                    'terms'    => array( 'accessories-charging-cables' ),
                                                    'operator' => 'NOT IN',
-                                                  )
+                                                ),
+                                                array(
+                                                   'taxonomy' => 'pa_brand-and-model',
+                                                   'field'    => 'term_id',
+                                                   'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+                                                   'operator' => 'NOT IN',
+                                                )
                                              )
                                              );
 
@@ -244,7 +250,13 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                                    'field'    => 'slug',
                                                    'terms'    => array( 'accessories-charging-cables' ),
                                                    'operator' => 'NOT IN',
-                                                  )
+                                                ),
+                                                array(
+                                                   'taxonomy' => 'pa_brand-and-model',
+                                                   'field'    => 'term_id',
+                                                   'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+                                                   'operator' => 'NOT IN',
+                                                )
                                              )
                                              );
 
@@ -297,7 +309,13 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                                    'field'    => 'slug',
                                                    'terms'    => array( 'accessories-charging-cables' ),
                                                    'operator' => 'NOT IN',
-                                                  )
+                                                ),
+                                                array(
+                                                   'taxonomy' => 'pa_brand-and-model',
+                                                   'field'    => 'term_id',
+                                                   'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+                                                   'operator' => 'NOT IN',
+                                                )
                                              )
                                              );
 
