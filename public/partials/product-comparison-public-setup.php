@@ -88,6 +88,8 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
          'price' => $product->get_price(),
          'operational_temperature' => $product->get_attribute('operating-temperature'),
 		 'Brand' => $product->get_attribute('brand'),
+		 'dynamicpowerbalancing' => $product->get_attribute('dynamic-power-balancing'),
+		 'smartcontrolvia' => $product->get_attribute('smart-control-via'),
 		 'Advantage' => esc_attr($advantage),
 		 'DisAdvantage' => $disadvantage,
 		);

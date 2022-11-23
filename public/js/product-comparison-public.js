@@ -113,6 +113,9 @@
                         $('.compare__col[data-colno=' + colno + ']').find("p.compareCommunication").html(response["data"]["exists"]["communication"]);
                         $('.compare__col[data-colno=' + colno + ']').find("p.ocppReady").html(response["data"]["exists"]["ocppReady"]);
 
+                        $('.compare__col[data-colno=' + colno + ']').find("p.dynamic-power-balancing").html(response["data"]["exists"]["dynamicpowerbalancing"]);
+                        $('.compare__col[data-colno=' + colno + ']').find("p.smart-control-via").html(response["data"]["exists"]["smartcontrolvia"]);
+
                         $('.compare__col[data-colno=' + colno + ']').find(".buyNowButton").html("<a href=" + response["data"]["exists"]["product_url"] + ">Buy Now</a>");
 
                         $('.compare__col[data-colno=' + colno + ']').find("article.advantage").html(response["data"]["exists"]["Advantage"]);

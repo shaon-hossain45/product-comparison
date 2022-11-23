@@ -376,6 +376,12 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
             <div class="compare__row">
                <h6>INTEGRATED CABLE</h6>
             </div>
+            <div class="compare__row">
+               <h6>Dynamic Power Balancing</h6>
+            </div>
+            <div class="compare__row">
+               <h6>Smart Control Via</h6>
+            </div>
          </div>
          <div class="advdis-flex">
          </div>
@@ -420,6 +426,12 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
               </div>
               <div class="compare__row value">
                  <p class="integratedcable"></p>
+              </div>
+              <div class="compare__row value">
+                 <p class="dynamic-power-balancing"></p>
+              </div>
+              <div class="compare__row value">
+                 <p class="smart-control-via"></p>
               </div>
               <div class="compare__row value">
                  <div class="buyNowButton"></div>
@@ -476,6 +488,12 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                  <p class="integratedcable"></p>
               </div>
               <div class="compare__row value">
+                 <p class="dynamic-power-balancing"></p>
+              </div>
+              <div class="compare__row value">
+                 <p class="smart-control-via"></p>
+              </div>
+              <div class="compare__row value">
                  <div class="buyNowButton"></div>
               </div>
            </div>
@@ -528,6 +546,12 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
               </div>
               <div class="compare__row value">
                  <p class="integratedcable"></p>
+              </div>
+              <div class="compare__row value">
+                 <p class="dynamic-power-balancing"></p>
+              </div>
+              <div class="compare__row value">
+                 <p class="smart-control-via"></p>
               </div>
               <div class="compare__row value">
                  <div class="buyNowButton"></div>
