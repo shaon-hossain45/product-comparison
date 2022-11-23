@@ -152,7 +152,14 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
 
 		// if( ! empty( $item ) ){
  
-		$output .='<div class="compare__table">
+		$output .='<div class="compare_table_header featured-title">
+      <div class="page-title-inner container">
+	  <div class=""><h1 class="shop-page-title xilarge">Product Comparison</h1>
+		<div class="is-large">
+	<nav class="breadcrumbs uppercase"><a href="https://chargingshop.eu/shop/">Shop</a> <span class="divider">/</span> compare-wallbox-stations</nav></div></div>
+	</div>
+      </div>
+      <div class="compare__table">
         <div class="compare__header">
                            <div class="compare__col agenda">
                               <div class="compare__row compare__title"></div>

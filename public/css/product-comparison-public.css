@@ -3,11 +3,67 @@
  * included in this file.
  */
     
+    .compare_table_header {
+        background-color: #112bcc;
+    }
+    
+    .container {
+        max-width: 1290px !important;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .featured-title .page-title-inner {
+        padding-bottom: 20px;
+    }
+    
+    .page-title-inner {
+        position: relative;
+        padding-top: 20px;
+        min-height: 60px;
+    }
+    
+    nav.breadcrumbs {
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 0;
+        padding: 0;
+    }
+    
+    nav.breadcrumbs a {
+        text-decoration: none !important;
+        color: #fff;
+        font-weight: 700;
+    }
+    
+    nav.breadcrumbs a:hover {
+        color: #fff;
+    }
+    
+    .breadcrumbs .divider,
+    .breadcrumbs .separator {
+        position: relative;
+        top: 0;
+        opacity: .35;
+        margin: 0 0.3em;
+        font-weight: 300;
+    }
+    
+    h1.xilarge {
+        font-size: 2.25em !important;
+        color: #fff;
+    }
+    
     .compare__table {
         overflow-x: auto;
         max-width: 1290px !important;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 270px;
     }
     
     .compare__header {
@@ -28,6 +84,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
     }
     
     .compare__row.compare__product-photo {
@@ -363,6 +420,11 @@
     
     .max-heightvalue {
         height: 265px;
+        position: absolute;
+        left: 0;
+        top: -370px;
+        width: 100%;
+        margin: 0 !important;
     }
     
     .max-heightvaluetitle {
