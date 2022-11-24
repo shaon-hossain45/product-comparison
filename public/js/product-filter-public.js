@@ -42,7 +42,7 @@
         var thisby = $(this);
         const selectedConncetor = $(this).parent().find("select.pa_connector").children("option:selected").val();
         const selectedPower = $(this).parent().find("select.pa_power").children("option:selected").val();
-        const selectedBrandModel = $(this).parent().find("select.pa_brand-and-model").children("option:selected").val();
+        const selectedBrandModel = $(this).parent().find("select.pa_marka-i-model").children("option:selected").val();
         //console.log(selectedConncetor + selectedPower + selectedBrandModel);
 
         /**
