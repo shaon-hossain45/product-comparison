@@ -60,8 +60,8 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
       $attributes =  wc_get_attribute_taxonomies();
       //var_dump($attributes);
 
-      if(isset($_GET['pa_brand-and-model']) And ($_GET['pa_brand-and-model'] != '')){
-         $brandmodel = $_GET['pa_brand-and-model'];
+      if(isset($_GET['pa_marka-i-model']) And ($_GET['pa_marka-i-model'] != '')){
+         $brandmodel = $_GET['pa_marka-i-model'];
       }else{
          $brandmodel ="";
       }
@@ -82,11 +82,11 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
             
             //var_dump($values);
 
-            if($values->attribute_name == "brand-and-model"){
+            if($values->attribute_name == "marka-i-model"){
                
-               $output .= '<select class="pa_brand-and-model">';
+               $output .= '<select class="pa_marka-i-model">';
                
-               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ), 'hide_empty' => false ) );
+               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array( 933,966,960,963 ), 'hide_empty' => false ) );
                //var_dump($terms);
 
                $output .='<option value="">Brand & Model</option>';
@@ -188,20 +188,20 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                                 array(
                                                    'taxonomy'      => 'product_cat',
                                                    'field' => 'slug', //This is optional, as it defaults to 'term_id'
-                                                   'terms'         => 'wallbox-charging-station',
+                                                   'terms'         => 'ladowarki-wallbox',
                                                    'include_children' => false,
                                                    'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
                                                 ),
                                                 array(
                                                    'taxonomy' => 'product_cat',
                                                    'field'    => 'slug',
-                                                   'terms'    => array( 'accessories-charging-cables' ),
+                                                   'terms'    => array( 'accessories-pl' ),
                                                    'operator' => 'NOT IN',
                                                 ),
                                                 array(
-                                                   'taxonomy' => 'pa_brand-and-model',
+                                                   'taxonomy' => 'pa_marka-i-model',
                                                    'field'    => 'term_id',
-                                                   'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+                                                   'terms'    => array( 933,966,960,963 ),
                                                    'operator' => 'NOT IN',
                                                 )
                                              )
@@ -212,7 +212,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                              while ( $loop->have_posts() ) : $loop->the_post();
                                              global $product;
                                              $output .='<li>
-                                             <button class="multple_values1andcolumn" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_brand-and-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
+                                             <button class="multple_values1andcolumn" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_marka-i-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
                                           </li>';
                                              endwhile;
                                        } else {
@@ -248,20 +248,20 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                                 array(
                                                    'taxonomy'      => 'product_cat',
                                                    'field' => 'slug', //This is optional, as it defaults to 'term_id'
-                                                   'terms'         => 'wallbox-charging-station',
+                                                   'terms'         => 'ladowarki-wallbox',
                                                    'include_children' => false,
                                                    'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
                                                 ),
                                                 array(
                                                    'taxonomy' => 'product_cat',
                                                    'field'    => 'slug',
-                                                   'terms'    => array( 'accessories-charging-cables' ),
+                                                   'terms'    => array( 'accessories-pl' ),
                                                    'operator' => 'NOT IN',
                                                 ),
                                                 array(
-                                                   'taxonomy' => 'pa_brand-and-model',
+                                                   'taxonomy' => 'pa_marka-i-model',
                                                    'field'    => 'term_id',
-                                                   'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+                                                   'terms'    => array( 933,966,960,963 ),
                                                    'operator' => 'NOT IN',
                                                 )
                                              )
@@ -272,7 +272,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                              while ( $loop->have_posts() ) : $loop->the_post();
                                              global $product;
                                              $output .='<li>
-                                             <button class="multple_values1andcolumn" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_brand-and-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
+                                             <button class="multple_values1andcolumn" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_marka-i-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
                                           </li>';
                                              endwhile;
                                        } else {
@@ -307,20 +307,20 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                                 array(
                                                    'taxonomy'      => 'product_cat',
                                                    'field' => 'slug', //This is optional, as it defaults to 'term_id'
-                                                   'terms'         => 'wallbox-charging-station',
+                                                   'terms'         => 'ladowarki-wallbox',
                                                    'include_children' => false,
                                                    'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
                                                 ),
                                                 array(
                                                    'taxonomy' => 'product_cat',
                                                    'field'    => 'slug',
-                                                   'terms'    => array( 'accessories-charging-cables' ),
+                                                   'terms'    => array( 'accessories-pl' ),
                                                    'operator' => 'NOT IN',
                                                 ),
                                                 array(
-                                                   'taxonomy' => 'pa_brand-and-model',
+                                                   'taxonomy' => 'pa_marka-i-model',
                                                    'field'    => 'term_id',
-                                                   'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+                                                   'terms'    => array( 933,966,960,963 ),
                                                    'operator' => 'NOT IN',
                                                 )
                                              )
@@ -331,7 +331,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                              while ( $loop->have_posts() ) : $loop->the_post();
                                              global $product;
                                              $output .='<li>
-                                             <button class="multple_values1andcolumn" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_brand-and-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
+                                             <button class="multple_values1andcolumn" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_marka-i-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
                                           </li>';
                                              endwhile;
                                        } else {

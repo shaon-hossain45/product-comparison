@@ -52,8 +52,8 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 			$product_id = $_POST['value'];
 			$product = wc_get_product( $product_id );
 
-			$tag_slug = $product->get_attribute('brand-and-model');
-			$attributes_terms = get_term_by('name', $tag_slug, 'pa_brand-and-model');
+			$tag_slug = $product->get_attribute('marka-i-model');
+			$attributes_terms = get_term_by('name', $tag_slug, 'pa_marka-i-model');
 			$advantage = get_term_meta($attributes_terms->term_id, 'custom_taxonomy_advantage', true);
 			$disadvantage = get_term_meta($attributes_terms->term_id, 'custom_taxonomy_disadvantage', true);
 
@@ -133,18 +133,18 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'wallbox-charging-station',
+					  'terms'         => 'ladowarki-wallbox',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-charging-cables' ),
+					'terms'    => array( 'accessories-pl' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
 					'terms'    => array( $brandmodel ),
 					'operator' => 'IN',
@@ -162,9 +162,9 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'operator' => 'IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'terms'    => array( 933,966,960,963 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -178,18 +178,18 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'wallbox-charging-station',
+					  'terms'         => 'ladowarki-wallbox',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-charging-cables' ),
+					'terms'    => array( 'accessories-pl' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
 					'terms'    => array( $brandmodel ),
 					'operator' => 'IN',
@@ -201,9 +201,9 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'operator' => 'IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'terms'    => array( 933,966,960,963 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -217,18 +217,18 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'wallbox-charging-station',
+					  'terms'         => 'ladowarki-wallbox',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-charging-cables' ),
+					'terms'    => array( 'accessories-pl' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
 					'terms'    => array( $brandmodel ),
 					'operator' => 'IN',
@@ -240,9 +240,9 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'operator' => 'IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'terms'    => array( 933,966,960,963 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -257,14 +257,14 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'wallbox-charging-station',
+					  'terms'         => 'ladowarki-wallbox',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-charging-cables' ),
+					'terms'    => array( 'accessories-pl' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
@@ -280,9 +280,9 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'operator' => 'IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'terms'    => array( 933,966,960,963 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -296,14 +296,14 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'wallbox-charging-station',
+					  'terms'         => 'ladowarki-wallbox',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-charging-cables' ),
+					'terms'    => array( 'accessories-pl' ),
 					'operator' => 'NOT IN',
 				   ),array(
 					'taxonomy' => 'pa_power',
@@ -312,9 +312,9 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'operator' => 'IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'terms'    => array( 933,966,960,963 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -328,14 +328,14 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'wallbox-charging-station',
+					  'terms'         => 'ladowarki-wallbox',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-charging-cables' ),
+					'terms'    => array( 'accessories-pl' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
@@ -345,9 +345,9 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 					'operator' => 'IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'terms'    => array( 933,966,960,963 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -361,25 +361,25 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'wallbox-charging-station',
+					  'terms'         => 'ladowarki-wallbox',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-charging-cables' ),
+					'terms'    => array( 'accessories-pl' ),
 					'operator' => 'NOT IN',
 				   ),array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
 					'terms'    => array( $brandmodel ),
 					'operator' => 'IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'terms'    => array( 933,966,960,963 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -393,20 +393,20 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					  'taxonomy'      => 'product_cat',
 					  'field' => 'slug', //This is optional, as it defaults to 'term_id'
-					  'terms'         => 'wallbox-charging-station',
+					  'terms'         => 'ladowarki-wallbox',
 					  'include_children' => false,
 					  'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
 				   ),
 				   array(
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
-					'terms'    => array( 'accessories-charging-cables' ),
+					'terms'    => array( 'accessories-pl' ),
 					'operator' => 'NOT IN',
 				   ),
 				   array(
-					'taxonomy' => 'pa_brand-and-model',
+					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ),
+					'terms'    => array( 933,966,960,963 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -418,7 +418,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
             //    $args['tax_query'] = array(
 			// 	'relation' => 'AND',
             //       array(
-            //             'taxonomy' => 'pa_brand-and-model',
+            //             'taxonomy' => 'pa_marka-i-model',
             //             'field'    => 'term_id',
             //             'terms'    => array( $brandmodel ),
             //             'operator' => 'IN',
@@ -433,7 +433,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				while ( $loop->have_posts() ) : $loop->the_post();
 				global $product;
 				$output .='<li>
-				<button class="multple_ajax" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_brand-and-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
+				<button class="multple_ajax" product_id="'.$product->get_id().'">'.$product->get_name().'<span><strong>Brand & Model: </strong>'.$product->get_attribute( 'pa_marka-i-model' ).', <strong>Connector: </strong>'.$product->get_attribute( 'connector' ).', <strong>Power: </strong>'.$product->get_attribute( 'power' ).'</span></button>
 			 </li>';
 				endwhile;
 			} else {
