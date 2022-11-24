@@ -156,7 +156,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
       <div class="page-title-inner container">
 	  <div class=""><h1 class="shop-page-title xilarge">Product Comparison</h1>
 		<div class="is-large">
-	<nav class="breadcrumbs uppercase"><a href="https://chargingshop.eu/shop/">Shop</a> <span class="divider">/</span> compare-wallbox-stations</nav></div></div>
+	<nav class="breadcrumbs uppercase"><a href="https://chargingshop.pl/shop/">Shop</a> <span class="divider">/</span> compare-wallbox-stations</nav></div></div>
 	</div>
       </div>
       <div class="compare__table">
