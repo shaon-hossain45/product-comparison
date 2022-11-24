@@ -164,7 +164,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 933,966,960,963 ),
+					'terms'    => array( 933,966,960,963,954,972 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -203,7 +203,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 933,966,960,963 ),
+					'terms'    => array( 933,966,960,963,954,972 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -242,7 +242,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 933,966,960,963 ),
+					'terms'    => array( 933,966,960,963,954,972 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -282,7 +282,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 933,966,960,963 ),
+					'terms'    => array( 933,966,960,963,954,972 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -314,7 +314,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 933,966,960,963 ),
+					'terms'    => array( 933,966,960,963,954,972 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -347,7 +347,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 933,966,960,963 ),
+					'terms'    => array( 933,966,960,963,954,972 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -379,7 +379,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 933,966,960,963 ),
+					'terms'    => array( 933,966,960,963,954,972 ),
 					'operator' => 'NOT IN',
 				 )
 				)
@@ -406,7 +406,7 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 				   array(
 					'taxonomy' => 'pa_marka-i-model',
 					'field'    => 'term_id',
-					'terms'    => array( 933,966,960,963 ),
+					'terms'    => array( 933,966,960,963,954,972 ),
 					'operator' => 'NOT IN',
 				 )
 				)

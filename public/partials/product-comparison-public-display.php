@@ -86,7 +86,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                
                $output .= '<select class="pa_marka-i-model">';
                
-               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array( 933,966,960,963 ), 'hide_empty' => false ) );
+               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array( 933,966,960,963,954,972 ), 'hide_empty' => false ) );
                //var_dump($terms);
 
                $output .='<option value="">Brand & Model</option>';
@@ -201,7 +201,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                                 array(
                                                    'taxonomy' => 'pa_marka-i-model',
                                                    'field'    => 'term_id',
-                                                   'terms'    => array( 933,966,960,963 ),
+                                                   'terms'    => array( 933,966,960,963,954,972 ),
                                                    'operator' => 'NOT IN',
                                                 )
                                              )
@@ -261,7 +261,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                                 array(
                                                    'taxonomy' => 'pa_marka-i-model',
                                                    'field'    => 'term_id',
-                                                   'terms'    => array( 933,966,960,963 ),
+                                                   'terms'    => array( 933,966,960,963,954,972 ),
                                                    'operator' => 'NOT IN',
                                                 )
                                              )
@@ -320,7 +320,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                                                 array(
                                                    'taxonomy' => 'pa_marka-i-model',
                                                    'field'    => 'term_id',
-                                                   'terms'    => array( 933,966,960,963 ),
+                                                   'terms'    => array( 933,966,960,963,954,972 ),
                                                    'operator' => 'NOT IN',
                                                 )
                                              )
