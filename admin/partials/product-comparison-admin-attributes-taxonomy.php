@@ -83,17 +83,17 @@ if ( ! class_exists( 'AdminBaseAttributesTaxonomy' ) ) {
 
 			?>
 			<tr class="form-field">
-				<th><label for="custom_taxonomy_advantage">Disadvantage</label></th>
+				<th><label for="custom_taxonomy_advantage">Advantage</label></th>
 				<td>
 					<textarea name="custom_taxonomy_advantage" id="custom_taxonomy_advantage" rows="5" cols="40" aria-describedby="custom_taxonomy_advantage-description" spellcheck="false"><?php echo esc_attr( $text_fieldadv ) ?></textarea>
 					<p id="custom_taxonomy_advantage-description">The advantage is not prominent by default; however, some themes may show it.</p>
 				</td>
 			</tr>
 			<tr class="form-field">
-				<th><label for="custom_taxonomy_disadvantage">Advantage</label></th>
+				<th><label for="custom_taxonomy_disadvantage">Disadvantage</label></th>
 				<td>
 					<textarea name="custom_taxonomy_disadvantage" id="custom_taxonomy_disadvantage" rows="5" cols="40" aria-describedby="custom_taxonomy_disadvantage-description" spellcheck="false"><?php echo esc_attr( $text_fielddis ) ?></textarea>
-					<p id="custom_taxonomy_disadvantage-description">The advantage is not prominent by default; however, some themes may show it.</p>
+					<p id="custom_taxonomy_disadvantage-description">The disadvantage is not prominent by default; however, some themes may show it.</p>
 				</td>
 			</tr>
 			<?php

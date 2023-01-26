@@ -83,7 +83,6 @@
         margin: 0 1rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         position: relative;
     }
     
@@ -269,9 +268,9 @@
     
     .compare__container .agenda {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 3rem;
+    	flex-direction: column;
+    	padding-bottom: 3rem;
+    	padding-top: 120px;
     }
     
     .agenda {
