@@ -268,9 +268,9 @@
     
     .compare__container .agenda {
         display: flex;
-    	flex-direction: column;
-    	padding-bottom: 3rem;
-    	padding-top: 120px;
+        flex-direction: column;
+        padding-bottom: 3rem;
+        padding-top: 120px;
     }
     
     .agenda {
@@ -475,4 +475,8 @@
         letter-spacing: normal;
         word-wrap: normal;
         white-space: nowrap;
+    }
+    
+    select option:disabled {
+        color: rgb(189, 189, 189);
     }

@@ -61,6 +61,10 @@ class Product_Comparison_Public {
 			new PublicBaseDisplay();
 		}
 
+		if ( class_exists( 'PublicBaseAdvfilter' ) ) {
+			new PublicBaseAdvfilter();
+		}
+
 	}
 
 	/**
@@ -77,6 +81,7 @@ class Product_Comparison_Public {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/product-comparison-public-display.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/product-comparison-public-setup.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/product-comparison-public-advfilter.php';
 	}
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
@@ -148,6 +153,20 @@ class Product_Comparison_Public {
 					array(
 						'ajax_url' => admin_url( 'admin-ajax.php' ),
 						'action'   => 'filter_update_setting',
+						'security' => $ajax_noncefilter,
+					)
+				);
+
+
+				wp_enqueue_script( 'product-adv-filter-public', plugin_dir_url( __FILE__ ) . 'js/product-adv-filter-public.js', array( 'jquery' ), $this->version, true );
+				$ajax_noncefilter = wp_create_nonce( 'product_advfilter_nonce' );
+
+				wp_localize_script(
+					'product-adv-filter-public',
+					'pluginkuyt_obj',
+					array(
+						'ajax_url' => admin_url( 'admin-ajax.php' ),
+						'action'   => 'adv_filter_update_setting',
 						'security' => $ajax_noncefilter,
 					)
 				);

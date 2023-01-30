@@ -33,51 +33,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
 
          /* Front End */
          add_action( 'wp_footer', array( $this, 'insert_html_in_header' ) );
-         add_action( 'wp_head', array( $this, 'dependable_selector_filter' ) );
 		}
-
-      
-      /**
-       * Audio update setting
-       *
-       * @return [type] [description]
-       */
-      public function dependable_selector_filter() {
-         // The query
-
-         $args = array(
-            'post_type' => 'product',
-            'posts_per_page' => -1,
-            'tax_query'             => array(
-               'relation' => 'AND',
-               array(
-                  'taxonomy' => 'pa_brand-and-model',
-                  'field'    => 'slug',
-                  'terms'    => array('nokia'),
-                  'operator' => 'IN',
-               )
-            )
-            );
-         $loop = new WP_Query( $args );
-         if ( $loop->have_posts() ) {
-               while ( $loop->have_posts() ) : $loop->the_post();
-               global $product;
-            $product_ids[] = $loop->post->ID;
-            //var_dump($loop->post->ID);
-
-            $attributes_list = $product->get_attribute( 'pa_color' );
-
-            var_dump($attributes_list);
-
-               endwhile;
-         } else {
-               echo __( 'No products found' );
-         }
-         wp_reset_postdata();
-
-         // TEST: Output the Products IDs
-         print_r($product_ids);
-     }
       
       /**
        * Audio update setting
@@ -86,7 +42,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
        */
       public function insert_html_in_header() {
          echo '<div class="f-btn cmpr-toggler" id="cmpr-btn"><i class="fa-solid fa-square-plus"></i><div class="label">Compare</div></div>';
-     }
+      }
 
 
    /**
