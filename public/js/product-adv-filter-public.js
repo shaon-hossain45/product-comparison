@@ -43,10 +43,27 @@
 
         var thisby = $(this);
 
-        const selectVal = thisby.find(":selected").text();
+        var selectVal = thisby.find(":selected").text();
         const columnData = thisby.attr("class");
 
+        //if (columnData == "pa_brand-and-model") {
+        var connectorVal = thisby.parent().children(".pa_connector").find("option:selected").text();
+        var powerVal = thisby.parent().children(".pa_power").find("option:selected").text();
 
+        //     var selectValJoin = selectVal + "," + connectorVal + "," + powerVal;
+        // }
+        // if (columnData == "pa_connector") {
+        var brandVal = thisby.parent().children(".pa_brand-and-model").find("option:selected").text();
+        //     var powerVal = thisby.parent().children(".pa_power").find("option:selected").text();
+
+        //     var selectValJoin = selectVal + "," + brandVal + "," + powerVal;
+        // }
+        // if (columnData == "pa_power") {
+        //     var brandVal = thisby.parent().children(".pa_brand-and-model").find("option:selected").text();
+        //     var connectorVal = thisby.parent().children(".pa_connector").find("option:selected").text();
+
+        //     var selectValJoin = selectVal + "," + brandVal + "," + connectorVal;
+        // }
         /**
          * Compare form variable
          * @type {Boolean}
@@ -60,7 +77,9 @@
          */
 
         var data = {
-            value: selectVal,
+            brand: brandVal,
+            connector: connectorVal,
+            power: powerVal,
             columndata: columnData,
             action: pluginkuyt_obj.action,
             security: pluginkuyt_obj.security
@@ -82,7 +101,7 @@
                     // console.log(data["data"]["exists"]);
 
                     var arr = data["data"]["exists"];
-
+                    console.log(arr);
                     var $spans = thisby.parent().parent().find('option').not(':first');
                     $spans.each(function(index) {
 
@@ -100,7 +119,12 @@
                                 $(this).prop('disabled', true);
                             }
 
-                            if ($(this).parent().attr("class") == data["data"]["column"]) {
+
+                            //if ($(this).parent().attr("class") == data["data"]["column"]) {
+                            //$(this).prop('disabled', false);
+                            //}
+
+                            if (arr == "") {
                                 $(this).prop('disabled', false);
                             }
 

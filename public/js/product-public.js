@@ -100,4 +100,20 @@
         });
     });
 
+    $(function() {
+        $(".clear-btn").bind("click", function(event) {
+            event.preventDefault();
+
+            var thisby = $(this);
+
+            //alert("hi");
+
+            thisby.closest(".compare-product__wrapper").find("select").prop('selectedIndex', 0);
+            thisby.closest(".compare-product__wrapper").find("select").children().prop('disabled', false);
+
+
+
+        });
+    });
+
 })(jQuery, window, document);

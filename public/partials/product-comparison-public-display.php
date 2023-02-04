@@ -86,7 +86,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                
                $output .= '<select class="pa_brand-and-model">';
                
-               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ), 'hide_empty' => false ) );
+               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'exclude' => array( 888,865,878,874,869,891,901,875,894,902,900,899,868,873,870 ), 'hide_empty' => true ) );
                //var_dump($terms);
 
                $output .='<option value="">Brand & Model</option>';
@@ -99,7 +99,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
             if($values->attribute_name == "power"){
               
                $output .= '<select class="pa_power">';
-               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'hide_empty' => false ) );
+               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'hide_empty' => true ) );
                //var_dump($terms);
 
                $output .='<option value="">Power(kW)</option>';
@@ -112,7 +112,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
             if($values->attribute_name == "connector"){
              
                $output .= '<select class="pa_connector">';
-               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'hide_empty' => false ) );
+               $terms = get_terms( array('taxonomy' => 'pa_' . $values->attribute_name, 'hide_empty' => true ) );
                //var_dump($terms);
 
                $output .='<option value="">Connector</option>';
@@ -167,6 +167,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                            <div class="compare__col product-values top-column-1">
                               <div class="compare__row compare__title">
                                  <div class="compare-product__wrapper">
+                                 <a href="#" class="clear-btn">Clear</a>
                                  <div class="btn-filter-group">
                                  <button type="button" class="filter-btn"><span><i class="fa-solid fa-filter"></i></span></button>
                                  <div class="hidden-btn">+</div>
@@ -226,6 +227,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                            <div class="compare__col product-values top-column-2">
                               <div class="compare__row compare__title">
                                  <div class="compare-product__wrapper">
+                                 <a href="#" class="clear-btn">Clear</a>
                                  <div class="btn-filter-group">
                                  <button type="button" class="filter-btn"><span><i class="fa-solid fa-filter"></i></span></button>
                                  <div class="hidden-btn">+</div>
@@ -286,6 +288,7 @@ if ( ! class_exists( 'PublicBaseDisplay' ) ) {
                            <div class="compare__col product-values top-column-3">
                               <div class="compare__row compare__title">
                                  <div class="compare-product__wrapper">
+                                 <a href="#" class="clear-btn">Clear</a>
                                  <div class="btn-filter-group">
                                  <button type="button" class="filter-btn"><span><i class="fa-solid fa-filter"></i></span></button>
                                  <div class="hidden-btn">+</div>

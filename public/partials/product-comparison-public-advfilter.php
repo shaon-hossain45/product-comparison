@@ -53,21 +53,67 @@ if ( ! class_exists( 'PublicBaseAdvfilter' ) ) {
                   global $woocommerce;
 
                   $taxonomy = $_POST['columndata'];
-                  $terms_name = $_POST['value'];
+                  //$terms_name = explode(",", $_POST['value']);
 
+         //$terms_name = array_filter($terms_name, function($value) {
+            //  return $element !== "";
+            //return !in_array($value, ['Brand & Model', 'Power(kW)']);
+            //                   ↑
+            // Array value which you want to delete
+         //});
+
+         //var_dump($_POST['value']);
+
+      if($_POST['brand'] != 'pa_brand-and-model'){
+         $pa_brandmodel = $_POST['brand'];
+      }else{
+         $pa_brandmodel = "";
+      }
+
+      if($_POST['connector'] != 'pa_connector'){
+         $pa_connector = $_POST['connector'];
+      }else{
+         $pa_connector = "";
+      }
+
+      if($_POST['power'] != 'pa_power'){
+         $pa_power = $_POST['power'];
+      }else{
+         $pa_power = "";
+      }
+
+				$tax_query = array('relation' => 'AND');
+				
+				if ( isset( $pa_brandmodel ) & ($pa_brandmodel != 'Brand & Model') ){
+					$tax_query[] =  array(
+							'taxonomy' => 'pa_brand-and-model',
+							'field' => 'name',
+							'terms' => $pa_brandmodel
+						);
+				 }
+				
+				if ( isset( $pa_connector ) & ($pa_connector != 'Connector') ){
+					$tax_query[] =  array(
+							'taxonomy' => 'pa_connector',
+							'field' => 'name',
+							'terms' => $pa_connector
+						);
+				 }
+				
+				if ( isset( $pa_power ) & ($pa_power != 'Power(kW)') ){
+					$tax_query[] =  array(
+							'taxonomy' => 'pa_power',
+							'field' => 'name',
+							'terms' => $pa_power
+						);
+				 }
+				
                $args = array(
                   'post_type' => 'product',
                   'posts_per_page' => -1,
-                  'tax_query'             => array(
-                     'relation' => 'AND',
-                     array(
-                        'taxonomy' => $taxonomy,
-                        'field'    => 'slug',
-                        'terms'    => array($terms_name),
-                        'operator' => 'IN',
-                     )
-                  )
+                  'tax_query'             => $tax_query,
                   );
+				
                $loop = new WP_Query( $args );
                if ( $loop->have_posts() ) {
                      while ( $loop->have_posts() ) : $loop->the_post();
@@ -76,19 +122,21 @@ if ( ! class_exists( 'PublicBaseAdvfilter' ) ) {
 
                   //$attributes_list = $product->get_attribute( 'pa_connector' );
 
-if($taxonomy == 'pa_brand-and-model'){
-   $product_arraylist[] = $product->get_attribute( 'pa_connector' );
-   $product_arraylist[] = $product->get_attribute( 'pa_power' );
-}
+                  //if($taxonomy == 'pa_brand-and-model'){
+                     $product_arraylist[] = $product->get_attribute( 'pa_connector' );
+                     $product_arraylist[] = $product->get_attribute( 'pa_power' );
+                     $product_arraylist[] = $product->get_attribute( 'pa_brand-and-model' );
+                  //}
 
-if($taxonomy == 'pa_connector'){
-   $product_arraylist[] = $product->get_attribute( 'pa_brand-and-model' );
-   $product_arraylist[] = $product->get_attribute( 'pa_power' );
-}
-if($taxonomy == 'pa_power'){
-   $product_arraylist[] = $product->get_attribute( 'pa_brand-and-model' );
-   $product_arraylist[] = $product->get_attribute( 'pa_connector' );
-}
+                  // if($taxonomy == 'pa_connector'){
+                  //    $product_arraylist[] = $product->get_attribute( 'pa_brand-and-model' );
+                  //    $product_arraylist[] = $product->get_attribute( 'pa_power' );
+                  // }
+
+                  // if($taxonomy == 'pa_power'){
+                  //    $product_arraylist[] = $product->get_attribute( 'pa_brand-and-model' );
+                  //    $product_arraylist[] = $product->get_attribute( 'pa_connector' );
+                  // }
 
                      endwhile;
                } else {
