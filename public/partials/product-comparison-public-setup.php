@@ -90,8 +90,8 @@ if ( ! class_exists( 'PublicBaseSetup' ) ) {
 		 'Brand' => $product->get_attribute('brand'),
 		 'dynamicpowerbalancing' => $product->get_attribute('dynamic-power-balancing'),
 		 'smartcontrolvia' => $product->get_attribute('smart-control-via'),
-		 'Advantage' => esc_attr($advantage),
-		 'DisAdvantage' => $disadvantage,
+		 'Advantage' => html_entity_decode($advantage),
+		 'DisAdvantage' => html_entity_decode($disadvantage),
 		);
 
 			$return_success = array(

@@ -62,7 +62,7 @@ if ( ! class_exists( 'AdminBaseAttributes' ) ) {
 					</th>
 					<td>
 						<input type="text" class="custom_attribute_field" name="custom_attribute_field" id="custom_attribute_field" value="<?php echo esc_attr( $value ); ?>" />
-						<p class="description">Product attribute filed advantage description.</p>
+						<!-- <p class="description">Product attribute filed advantage description.</p> -->
 					</td>
 				</tr>
 				<tr class="form-field">
@@ -71,7 +71,7 @@ if ( ! class_exists( 'AdminBaseAttributes' ) ) {
 					</th>
 					<td>
 						<input type="text" class="custom_attribute_field" name="custom_attribute_field2" id="custom_attribute_field2" value="<?php echo esc_attr( $value2 ); ?>" />
-						<p class="description">Product attribute filed disadvantage description.</p>
+						<!-- <p class="description">Product attribute filed disadvantage description.</p> -->
 					</td>
 				</tr>
 			<?php

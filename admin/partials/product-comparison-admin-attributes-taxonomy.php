@@ -62,12 +62,36 @@ if ( ! class_exists( 'AdminBaseAttributesTaxonomy' ) ) {
 			?>
 				<div class="form-field term-custom_taxonomy_advantage-wrap">
 					<label for="custom_taxonomy_advantage">Advantage</label>
-					<textarea name="custom_taxonomy_advantage" id="custom_taxonomy_advantage" rows="5" cols="40" aria-describedby="custom_taxonomy_advantage-description" spellcheck="false"></textarea>
+					<?php
+					$content = "";
+					$custom_editor_id = "custom_taxonomy_advantage";
+					$custom_editor_name = "custom_taxonomy_advantage";
+					$args = array(
+						'media_buttons' => false, // This setting removes the media button.
+						'textarea_name' => $custom_editor_name, // Set custom name.
+						'textarea_rows' => get_option('default_post_edit_rows', 10), //Determine the number of rows.
+						'quicktags' => false, // Remove view as HTML button.
+						);
+					wp_editor( $content, $custom_editor_id, $args );
+					?>
+					<!-- <textarea name="custom_taxonomy_advantage" id="custom_taxonomy_advantage" rows="5" cols="40" aria-describedby="custom_taxonomy_advantage-description" spellcheck="false"></textarea> -->
 					<p id="custom_taxonomy_advantage-description">The advantage is not prominent by default; however, some themes may show it.</p>
 				</div>
 				<div class="form-field term-custom_taxonomy_disadvantage-wrap">
 					<label for="custom_taxonomy_disadvantage">Disadvantage</label>
-					<textarea name="custom_taxonomy_disadvantage" id="custom_taxonomy_disadvantage" rows="5" cols="40" aria-describedby="custom_taxonomy_disadvantage-description" spellcheck="false"></textarea>
+					<?php
+					$content = "";
+					$custom_editor_id = "custom_taxonomy_disadvantage";
+					$custom_editor_name = "custom_taxonomy_disadvantage";
+					$args = array(
+						'media_buttons' => false, // This setting removes the media button.
+						'textarea_name' => $custom_editor_name, // Set custom name.
+						'textarea_rows' => get_option('default_post_edit_rows', 10), //Determine the number of rows.
+						'quicktags' => false, // Remove view as HTML button.
+						);
+					wp_editor( $content, $custom_editor_id, $args );
+					?>
+					<!-- <textarea name="custom_taxonomy_disadvantage" id="custom_taxonomy_disadvantage" rows="5" cols="40" aria-describedby="custom_taxonomy_disadvantage-description" spellcheck="false"></textarea> -->
 					<p id="custom_taxonomy_disadvantage-description">The disadvantage is not prominent by default; however, some themes may show it.</p>
 				</div>
 			<?php
@@ -85,14 +109,36 @@ if ( ! class_exists( 'AdminBaseAttributesTaxonomy' ) ) {
 			<tr class="form-field">
 				<th><label for="custom_taxonomy_advantage">Advantage</label></th>
 				<td>
-					<textarea name="custom_taxonomy_advantage" id="custom_taxonomy_advantage" rows="5" cols="40" aria-describedby="custom_taxonomy_advantage-description" spellcheck="false"><?php echo esc_attr( $text_fieldadv ) ?></textarea>
+				<?php
+					$content = html_entity_decode( $text_fieldadv );
+					$custom_editor_id = "custom_taxonomy_advantage";
+					$custom_editor_name = "custom_taxonomy_advantage";
+					$args = array(
+						'media_buttons' => false, // This setting removes the media button.
+						'textarea_name' => $custom_editor_name, // Set custom name.
+						'textarea_rows' => get_option('default_post_edit_rows', 10), //Determine the number of rows.
+						'quicktags' => false, // Remove view as HTML button.
+						);
+					wp_editor( $content, $custom_editor_id, $args );
+					?>
 					<p id="custom_taxonomy_advantage-description">The advantage is not prominent by default; however, some themes may show it.</p>
 				</td>
 			</tr>
 			<tr class="form-field">
 				<th><label for="custom_taxonomy_disadvantage">Disadvantage</label></th>
 				<td>
-					<textarea name="custom_taxonomy_disadvantage" id="custom_taxonomy_disadvantage" rows="5" cols="40" aria-describedby="custom_taxonomy_disadvantage-description" spellcheck="false"><?php echo esc_attr( $text_fielddis ) ?></textarea>
+				<?php
+					$content = html_entity_decode( $text_fielddis );
+					$custom_editor_id = "custom_taxonomy_disadvantage";
+					$custom_editor_name = "custom_taxonomy_disadvantage";
+					$args = array(
+						'media_buttons' => false, // This setting removes the media button.
+						'textarea_name' => $custom_editor_name, // Set custom name.
+						'textarea_rows' => get_option('default_post_edit_rows', 10), //Determine the number of rows.
+						'quicktags' => false, // Remove view as HTML button.
+						);
+					wp_editor( $content, $custom_editor_id, $args );
+					?>
 					<p id="custom_taxonomy_disadvantage-description">The disadvantage is not prominent by default; however, some themes may show it.</p>
 				</td>
 			</tr>
@@ -105,12 +151,12 @@ if ( ! class_exists( 'AdminBaseAttributesTaxonomy' ) ) {
 			update_term_meta(
 				$term_id,
 				'custom_taxonomy_advantage',
-				sanitize_text_field( $_POST[ 'custom_taxonomy_advantage' ] )
+				htmlentities( wpautop( $_POST[ 'custom_taxonomy_advantage' ] ) )
 			);
 			update_term_meta(
 				$term_id,
 				'custom_taxonomy_disadvantage',
-				sanitize_text_field( $_POST[ 'custom_taxonomy_disadvantage' ] )
+				htmlentities( wpautop( $_POST[ 'custom_taxonomy_disadvantage' ] ) )
 			);
 		}
 

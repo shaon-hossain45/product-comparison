@@ -6,3 +6,8 @@
 input.custom_attribute_field {
     width: 400px;
 }
+
+#wp-custom_taxonomy_advantage-wrap,
+#wp-custom_taxonomy_disadvantage-wrap {
+    width: 95%;
+}
